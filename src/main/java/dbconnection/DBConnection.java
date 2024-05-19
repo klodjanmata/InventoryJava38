@@ -10,6 +10,7 @@ public class DBConnection {
         try(
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventoryjava38", "root", "root")){
             return conn;
+
         }
         catch (Exception e){
             e.printStackTrace();
