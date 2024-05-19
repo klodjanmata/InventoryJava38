@@ -1,27 +1,21 @@
-package Entity;
-
+package entities;
 
 public class Category {
-
-
-    private Long id;
-
-
+    private int id;
     private String name;
-
     private String description;
 
-    public Category(Long id, String name, String description) {
+    public Category(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -37,6 +31,12 @@ public class Category {
         return description;
     }
 
+
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Category{" +
@@ -44,11 +44,5 @@ public class Category {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-
-
     }
 }
