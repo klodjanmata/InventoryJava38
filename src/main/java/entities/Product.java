@@ -1,6 +1,6 @@
 package entities;
 
-public class ProductEntity {
+public class Product {
 
     private int id;
     private String name;
@@ -8,6 +8,15 @@ public class ProductEntity {
     private int quantity;
     private double price;
     private int categoryId;
+
+    public Product(int id, String name, String type, int quantity, double price, int categoryId) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.quantity = quantity;
+        this.price = price;
+        this.categoryId = categoryId;
+    }
 
     public int getId() {
         return id;
@@ -57,14 +66,6 @@ public class ProductEntity {
         this.categoryId = categoryId;
     }
 
-    public ProductEntity(int id, String name, String type, int quantity, double price, int categoryId) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.quantity = quantity;
-        this.price = price;
-        this.categoryId = categoryId;
-    }
 
     @Override
     public String toString() {
