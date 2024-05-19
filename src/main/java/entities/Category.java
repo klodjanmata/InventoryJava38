@@ -10,7 +10,6 @@ public class Category {
         this.name = name;
         this.description = description;
     }
-
     public int getId() {
         return id;
     }
