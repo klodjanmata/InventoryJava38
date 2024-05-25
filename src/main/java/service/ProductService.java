@@ -4,10 +4,13 @@ import controller.ProductController;
 import dao.ProductDAO;
 import entities.Product;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductService {
     private ProductDAO productDAO = new ProductDAO();
+
     public void add() {
         Product newProduct = new Product();
         Scanner sc = new Scanner(System.in);
@@ -32,5 +35,13 @@ public class ProductService {
         int category = sc.nextInt();
         newProduct.setCategoryId(category);
         productDAO.save(newProduct);
+    }
+
+    public void displayAllProducts(){
+        List<Product> productsList = productDAO.getProducts();
+        System.out.println("ID\tName\tType\tQuantity\tPrice");
+        for (Product product : productsList) {
+            System.out.println(product.toString());
+        }
     }
 }

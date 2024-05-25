@@ -33,7 +33,7 @@ public class InventoryManagment {
                     break;
                 case 2:
                     System.out.println("Displaying Products:");
-                    //displayAllProducts();
+                    productService.displayAllProducts();
                     break;
                 case 3:
                     System.out.println("Notifying low stock:");

@@ -31,5 +31,9 @@ public class Product {
     @Column(name = "category_id")
     private int categoryId;
 
+    @Override
+    public String toString() {
+        return id + "\t" + name + "\t\t" + type + "\t\t" + quantity + "\t\t" + price + "\t\t" ;
+    }
 
 }

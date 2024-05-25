@@ -5,6 +5,8 @@ import entities.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class ProductDAO {
 
     public void save(Product product) {
@@ -21,5 +23,13 @@ public class ProductDAO {
         }
     }
 
+    public List<Product> getProducts() {
+        try(Session session = HibernateUtils.getSessionFactory().openSession()) {
+            return session.createQuery("from Product").list();
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 }
