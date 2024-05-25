@@ -3,11 +3,8 @@ package entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import sun.util.resources.Bundles;
-
-
 @Entity
-@Table(name = "Category")
+@Table(name = "category")
 @Getter
 @Setter
 @AllArgsConstructor

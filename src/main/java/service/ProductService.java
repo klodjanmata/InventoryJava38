@@ -12,10 +12,6 @@ public class ProductService {
         Product newProduct = new Product();
         Scanner sc = new Scanner(System.in);
 
-//        System.out.println("Enter Product Code: ");
-//        int code = sc.nextInt();
-//        newProduct.setId(code);
-
         System.out.println("Please enter the name of the product: ");
         String name = sc.next();
         newProduct.setName(name);
