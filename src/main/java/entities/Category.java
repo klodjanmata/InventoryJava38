@@ -3,6 +3,11 @@ package entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 @Entity
 @Table(name = "category")
 @Getter
