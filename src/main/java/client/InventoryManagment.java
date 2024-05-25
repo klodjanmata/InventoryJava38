@@ -47,6 +47,9 @@ public class InventoryManagment {
                     System.out.println("Displaying Categories:");
                     //displayCategories()
                     break;
+                case 6:
+                    System.out.println("Display the full value of product stock: ");
+                    //display it.
                 case 0:
                     System.out.println("Exiting....");
                     sc.close();

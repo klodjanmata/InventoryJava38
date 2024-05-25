@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class ProductDAO {
+
     public void save(Product product) {
         Transaction transaction = null;
         try(Session session = HibernateUtils.getSessionFactory().openSession()) {
@@ -19,4 +20,6 @@ public class ProductDAO {
             e.printStackTrace();
         }
     }
+
+
 }
