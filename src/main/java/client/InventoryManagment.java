@@ -21,9 +21,9 @@ public class InventoryManagment {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
+        Scanner sc = new Scanner(System.in);
         while(true){
             printOptions();
-            Scanner sc = new Scanner(System.in);
             int choice = sc.nextInt();
             switch(choice){
                 case 1:
@@ -50,7 +50,7 @@ public class InventoryManagment {
                     return;
                 default:
                     System.out.println("Invalid choice");
-
+                    sc.close();
             }
         }
 

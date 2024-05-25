@@ -1,19 +1,20 @@
 package service;
 
 import controller.ProductController;
+import dao.ProductDAO;
 import entities.Product;
 
 import java.util.Scanner;
 
 public class ProductService {
-    private ProductController productController = new ProductController();
+    private ProductDAO productDAO = new ProductDAO();
     public void add() {
         Product newProduct = new Product();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Product Code: ");
-        int code = sc.nextInt();
-        newProduct.setId(code);
+//        System.out.println("Enter Product Code: ");
+//        int code = sc.nextInt();
+//        newProduct.setId(code);
 
         System.out.println("Please enter the name of the product: ");
         String name = sc.next();
@@ -35,6 +36,6 @@ public class ProductService {
         int category = sc.nextInt();
         newProduct.setCategoryId(category);
         sc.close();
-        productController.insert(newProduct);
+        productDAO.save(newProduct);
     }
 }
