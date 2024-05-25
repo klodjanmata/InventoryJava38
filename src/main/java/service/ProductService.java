@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductService {
+
     private ProductDAO productDAO = new ProductDAO();
 
     public void add() {
@@ -42,6 +43,14 @@ public class ProductService {
         System.out.println("ID\tName\tType\tQuantity\tPrice");
         for (Product product : productsList) {
             System.out.println(product.toString());
+        }
+    }
+
+    public void displayProductStockValue() {
+        List<Product> products = productDAO.getProducts();
+        for (Product product : products) {
+            double stockValue = product.getQuantity() * product.getPrice();
+            System.out.println("Product: " + product.getName() + ", Stock Value: " + stockValue);
         }
     }
 }

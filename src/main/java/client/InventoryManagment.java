@@ -15,6 +15,7 @@ public class InventoryManagment {
         System.out.println("3. Notify low stock");
         System.out.println("4. Add Category");
         System.out.println("5. Display Categories");
+        System.out.println("6. Display product stock value");
         System.out.println("0. Exit");
         System.out.print("Enter your choice: ");
 
@@ -49,7 +50,8 @@ public class InventoryManagment {
                     break;
                 case 6:
                     System.out.println("Display the full value of product stock: ");
-                    //display it.
+                    productService.displayProductStockValue();
+                    break;
                 case 0:
                     System.out.println("Exiting....");
                     sc.close();
