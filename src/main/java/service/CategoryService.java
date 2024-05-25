@@ -12,14 +12,13 @@ public class CategoryService {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter the name of the category: ");
-        String name = sc.next();
+        String name = sc.nextLine();
         newCategory.setName(name);
 
         System.out.println("Please enter the description of the category: ");
-        String description = sc.next();
+        String description = sc.nextLine();
         newCategory.setDescription(description);
 
         categoryDAO.save(newCategory);
-        sc.close();
     }
 }

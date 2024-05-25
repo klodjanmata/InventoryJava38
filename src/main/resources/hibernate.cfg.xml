@@ -29,5 +29,6 @@
 
         <!-- Mention annotated class -->
         <mapping class="entities.Product"/>
+        <mapping class="entities.Category"/>
     </session-factory>
 </hibernate-configuration>

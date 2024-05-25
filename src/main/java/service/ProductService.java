@@ -13,11 +13,11 @@ public class ProductService {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter the name of the product: ");
-        String name = sc.next();
+        String name = sc.nextLine();
         newProduct.setName(name);
 
         System.out.println("Please enter type of the product: ");
-        String type = sc.next();
+        String type = sc.nextLine();
         newProduct.setType(type);
 
         System.out.println("Please enter the quantity of the product: ");
@@ -31,7 +31,6 @@ public class ProductService {
         System.out.println("Please enter product category code: ");
         int category = sc.nextInt();
         newProduct.setCategoryId(category);
-        sc.close();
         productDAO.save(newProduct);
     }
 }

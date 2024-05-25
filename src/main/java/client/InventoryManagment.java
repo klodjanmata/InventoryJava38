@@ -1,5 +1,6 @@
 package client;
 
+import service.CategoryService;
 import service.ProductService;
 
 import java.util.Scanner;
@@ -21,6 +22,7 @@ public class InventoryManagment {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
+        CategoryService categoryService = new CategoryService();
         Scanner sc = new Scanner(System.in);
         while(true){
             printOptions();
@@ -39,7 +41,7 @@ public class InventoryManagment {
                     break;
                 case 4:
                     System.out.println("Adding Category:");
-                    //addCategory()
+                    categoryService.add();
                     break;
                 case 5:
                     System.out.println("Displaying Categories:");
@@ -47,10 +49,10 @@ public class InventoryManagment {
                     break;
                 case 0:
                     System.out.println("Exiting....");
+                    sc.close();
                     return;
                 default:
                     System.out.println("Invalid choice");
-                    sc.close();
             }
         }
 
