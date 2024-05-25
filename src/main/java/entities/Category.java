@@ -3,6 +3,9 @@ package entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import sun.util.resources.Bundles;
+
+
 @Entity
 @Table(name = "Category")
 @Getter
@@ -12,13 +15,13 @@ import lombok.*;
 @ToString
 public class Category {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-@Column(name = "name")
+    @Column(name = "name")
     private String name;
 
-@Column(name = "description")
+    @Column(name = "description")
     private String description;
 
 }

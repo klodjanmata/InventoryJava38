@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class CategoryDAO {
+
     public void save(Category category){
     Transaction transaction=null;
     try(Session session = HibernateUtils.getSessionFactory().openSession()) {
@@ -20,3 +21,4 @@ public class CategoryDAO {
     }
 }
 }
+
