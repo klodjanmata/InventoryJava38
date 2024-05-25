@@ -2,7 +2,9 @@ package entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import sun.util.resources.Bundles;
+
 
 @Entity
 @Table(name = "Category")
