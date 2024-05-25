@@ -22,4 +22,8 @@ public class Category {
     @Column(name = "description")
     private String description;
 
+    @Override
+    public String toString() {
+        return  id + "\t" + name + "\t\t" + description;
+    }
 }

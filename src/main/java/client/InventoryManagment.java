@@ -38,7 +38,7 @@ public class InventoryManagment {
                     break;
                 case 3:
                     System.out.println("Notifying low stock:");
-                    //notifyLowStock()
+                    productService.notifyLowStock();
                     break;
                 case 4:
                     System.out.println("Adding Category:");
@@ -46,7 +46,7 @@ public class InventoryManagment {
                     break;
                 case 5:
                     System.out.println("Displaying Categories:");
-                    //displayCategories()
+                    categoryService.displayAllCategories();
                     break;
                 case 6:
                     System.out.println("Display the full value of product stock: ");

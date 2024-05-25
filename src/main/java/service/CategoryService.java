@@ -2,6 +2,8 @@ package service;
 
 import dao.CategoryDAO;
 import entities.Category;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class CategoryService {
@@ -20,5 +22,13 @@ public class CategoryService {
         newCategory.setDescription(description);
 
         categoryDAO.save(newCategory);
+    }
+
+    public void displayAllCategories() {
+        List<Category> categories = categoryDAO.findAll(); // Retrieve all categories
+        System.out.println("ID\tName\t\t\tDescription");
+        for (Category category : categories) {
+            System.out.println(category.toString());
+        }
     }
 }

@@ -23,7 +23,7 @@ public class ProductDAO {
         }
     }
 
-    public List<Product> getProducts() {
+    public List<Product> findAll() {
         try(Session session = HibernateUtils.getSessionFactory().openSession()) {
             return session.createQuery("from Product").list();
         }catch (Exception e) {

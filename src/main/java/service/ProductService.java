@@ -39,7 +39,7 @@ public class ProductService {
     }
 
     public void displayAllProducts(){
-        List<Product> productsList = productDAO.getProducts();
+        List<Product> productsList = productDAO.findAll();
         System.out.println("ID\tName\tType\tQuantity\tPrice");
         for (Product product : productsList) {
             System.out.println(product.toString());
@@ -47,10 +47,27 @@ public class ProductService {
     }
 
     public void displayProductStockValue() {
-        List<Product> products = productDAO.getProducts();
+        List<Product> products = productDAO.findAll();
         for (Product product : products) {
             double stockValue = product.getQuantity() * product.getPrice();
             System.out.println("Product: " + product.getName() + ", Stock Value: " + stockValue);
+        }
+    }
+
+    public void notifyLowStock() {
+        List<Product> products = productDAO.findAll();
+        int lowStockLimit = 5;
+        boolean foundLowStock = false;
+
+        for (Product product : products) {
+            if (product.getQuantity() <= lowStockLimit) {
+                System.out.println("Low stock: " + product.getName() + ", " + product.getQuantity() + " left");
+                foundLowStock = true;
+            }
+        }
+
+        if (!foundLowStock) {
+            System.out.println("All products have enough stock.");
         }
     }
 }
