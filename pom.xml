@@ -21,6 +21,11 @@
       <version>6.4.4.Final</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-hikaricp</artifactId>
+      <version>5.4.30.Final</version>
+    </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
