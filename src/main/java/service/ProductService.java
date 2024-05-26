@@ -70,13 +70,4 @@ public class ProductService {
             System.out.println("All products have enough stock.");
         }
     }
-        public void deleteProduct() {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Please enter the name of the product to delete: ");
-            String name = sc.nextLine();
-            productDAO.deleteProduct(name);
-            System.out.println("Product with name \"" + name + "\" has been deleted.");
-        }
-
-
 }
