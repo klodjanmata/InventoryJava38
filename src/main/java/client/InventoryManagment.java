@@ -16,6 +16,8 @@ public class InventoryManagment {
         System.out.println("4. Add Category");
         System.out.println("5. Display Categories");
         System.out.println("6. Display product stock value");
+        System.out.println("7. Change Product");
+        System.out.println("8. Delete Product");
         System.out.println("0. Exit");
         System.out.print("Enter your choice: ");
 
@@ -53,9 +55,13 @@ public class InventoryManagment {
                     productService.displayProductStockValue();
                     break;
                 case 7:
-                        System.out.println("Delete one product : ");
-                        productService.deleteProduct();
-                        break;
+                    System.out.println("Change Product:");
+                    productService.changeProduct();
+                    break;
+                case 8:
+                    System.out.println("Deleting Product:");
+                    productService.deleteProduct();
+                    break;
                 case 0:
                     System.out.println("Exiting....");
                     sc.close();

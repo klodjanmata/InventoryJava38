@@ -23,6 +23,36 @@ public class ProductDAO {
         }
     }
 
+    public void update(Product product) {
+        Transaction transaction = null;
+        try(Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(product);
+            transaction.commit();
+        }catch(Exception e) {
+            if(transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(Product product) {
+        Transaction transaction = null;
+        try(Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.delete(product);
+            transaction.commit();
+            System.out.print("Product deleted successfully");
+        }catch(Exception e) {
+            if(transaction != null) {
+                transaction.rollback();
+            }
+            System.out.println("Product cannot be deleted");
+            e.printStackTrace();
+        }
+    }
+
     public List<Product> findAll() {
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             return session.createQuery("from Product").list();
