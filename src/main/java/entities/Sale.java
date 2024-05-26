@@ -3,9 +3,6 @@ package entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
 @Entity
 @Table(name = "sale")
 @AllArgsConstructor
@@ -28,8 +25,7 @@ public class Sale {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "date")
-    private LocalDateTime date;
-
+    @Column(name = "invoiceId")
+    private int invoiceId;
 
 }

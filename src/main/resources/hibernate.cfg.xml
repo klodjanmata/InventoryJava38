@@ -31,5 +31,6 @@
         <mapping class="entities.Product"/>
         <mapping class="entities.Category"/>
         <mapping class="entities.Sale"/>
+        <mapping class="entities.Invoice"/>
     </session-factory>
 </hibernate-configuration>
