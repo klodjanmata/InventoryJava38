@@ -2,17 +2,20 @@ package service;
 
 import controller.ProductController;
 import dao.ProductDAO;
+import entities.Category;
 import entities.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ProductService {
 
     private List<Product> products;
 
     private ProductDAO productDAO = new ProductDAO();
+    private CategoryService categoryService = new CategoryService();
 
     public ProductService() {
         init();
@@ -133,8 +136,31 @@ public class ProductService {
         productDAO.delete(selectedProduct);
 
     }
+
+    public void findProductsByCategory() {
+        init();
+        categoryService.displayAllCategories();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the category ID to search for products: ");
+        int categoryId = sc.nextInt();
+        List<Product> productsCategory;// = productDAO.findByCategory(categoryId);
+//         Finding by searching on the list
+
+        productsCategory = products.stream().filter(product -> product.getCategoryId() == categoryId).collect(Collectors.toList());
+
+        System.out.println("ID\tName\tType\tQuantity\tPrice");
+        for (Product product : productsCategory) {
+            System.out.println(product.toString());
+        }
+    }
+
     private void init(){
         products = new ArrayList<>();
         products = productDAO.findAll();
     }
+
+    public List<Product> getProductList(){
+        return products;
+    }
+
 }

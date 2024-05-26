@@ -4,6 +4,7 @@ import dbconnection.HibernateUtils;
 import entities.Product;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -61,21 +62,12 @@ public class ProductDAO {
             return null;
         }
     }
-        public void deleteProduct (String name){
-            Transaction transaction = null;
-            try (Session session = HibernateUtils.getSessionFactory().openSession()) {
-                transaction = session.beginTransaction();
-                String hql = "delete from Product where name = :productName";
-                session.createQuery(hql)
-                        .setParameter("productName", name)
-                        .executeUpdate();
-                transaction.commit();
-            } catch (Exception e) {
-                if (transaction != null) {
-                    transaction.rollback();
-                }
-                e.printStackTrace();
-            }
-        }
 
+    public List<Product> findByCategory(int categoryId) {
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            Query<Product> query = session.createQuery("from Product where categoryId = :categoryId", Product.class);
+            query.setParameter("categoryId", categoryId);
+            return query.list();
+        }
     }
+}

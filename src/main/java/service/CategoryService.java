@@ -9,6 +9,12 @@ import java.util.Scanner;
 public class CategoryService {
     private CategoryDAO categoryDAO = new CategoryDAO();
 
+    private List<Category> categories;
+
+    public CategoryService() {
+        init();
+    }
+
     public void add() {
         Category newCategory = new Category();
         Scanner sc = new Scanner(System.in);
@@ -30,5 +36,13 @@ public class CategoryService {
         for (Category category : categories) {
             System.out.println(category.toString());
         }
+    }
+
+    private void init(){
+        categories = categoryDAO.findAll();
+    }
+
+    public List<Category> getCategories() {
+        return categories;
     }
 }

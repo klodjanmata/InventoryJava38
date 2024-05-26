@@ -30,5 +30,6 @@
         <!-- Mention annotated class -->
         <mapping class="entities.Product"/>
         <mapping class="entities.Category"/>
+        <mapping class="entities.Sale"/>
     </session-factory>
 </hibernate-configuration>
