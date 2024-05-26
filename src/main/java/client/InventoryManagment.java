@@ -52,6 +52,10 @@ public class InventoryManagment {
                     System.out.println("Display the full value of product stock: ");
                     productService.displayProductStockValue();
                     break;
+                case 7:
+                        System.out.println("Delete one product : ");
+                        productService.deleteProduct();
+                        break;
                 case 0:
                     System.out.println("Exiting....");
                     sc.close();
